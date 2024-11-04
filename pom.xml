@@ -91,7 +91,7 @@
         <repository>
             <id>deploymentRepo</id> <!-- This ID is a unique identifier for the repository -->
             <name>Nexus Repository</name> <!-- A descriptive name for the repository -->
-            <url>http://localhost:8081/repository/maven-releases/</url> <!-- The URL to your Nexus repository -->
+            <url>http://localhost:8089/repository/maven-releases/</url> <!-- The URL to your Nexus repository -->
         </repository>
     </distributionManagement>
 
