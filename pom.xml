@@ -16,6 +16,7 @@
     <properties>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
 
         <dependency>
@@ -33,6 +34,11 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -69,7 +75,24 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>deploymentRepo</id> <!-- This ID is a unique identifier for the repository -->
+            <name>Nexus Repository</name> <!-- A descriptive name for the repository -->
+            <url>http://localhost:8081/repository/maven-releases/</url> <!-- The URL to your Nexus repository -->
+        </repository>
+    </distributionManagement>
 
 </project>
